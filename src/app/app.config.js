@@ -11,11 +11,12 @@
 
   var config = {
 
-    apiKey: 'AIzaSyC4D5F9xzF2DArfnuXvr6Ovzo_rHM8E4mI',
-    authDomain: 'tasks-list-98ee1.firebaseapp.com',
-    databaseURL: 'https://tasks-list-98ee1.firebaseio.com',
-    storageBucket: 'tasks-list-98ee1.appspot.com',
-    messagingSenderId: '512506566396'
+    apiKey: 'AIzaSyBSd7MiIDP8ePhC8DHRELEK4EMYqoyqOfw',
+    authDomain: 'taskbin-17a87.firebaseapp.com',
+    databaseURL: 'https://taskbin-17a87.firebaseio.com',
+    storageBucket: 'taskbin-17a87.appspot.com',
+    messagingSenderId: '873960629845'
+
   };
 
   firebase.initializeApp(config);
