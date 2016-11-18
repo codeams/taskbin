@@ -1,0 +1,28 @@
+/**
+ *
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+textarea {
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Open Sans', 'Trebuchet MS', Arial, sans-serif;
+  color: #777;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+  outline: 0;
+}

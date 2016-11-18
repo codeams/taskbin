@@ -1,0 +1,17 @@
+/*!
+ * Project: taskbin
+ * Author: Alejandro Montannez <codeams@gmail.com>
+ * Version: 0.1.0
+ * Build date: 2016-11-16
+ * License: Copyrighted
+ */
+
+// Normalizing web page styles
+@import 'noramlize';
+
+// Project layouts
+@import 'layout/layout';
+@import 'layout/TaskList.layout';
+
+// Project styles
+@import 'themes/material-night/TaskList.style';

@@ -1,0 +1,13 @@
+{
+  "name": "taskbin",
+  "description": "Task organizer.",
+  "version": "0.1.0",
+  "author": "Alejandro Montannez <codeams@gmail.com>",
+  "license": "Copyrighted",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0"
+  }
+}

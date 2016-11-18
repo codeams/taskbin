@@ -1,0 +1,86 @@
+/**
+ * TaskList material-night theme stylesheets
+ */
+
+
+/* Color palettes */
+$body-background: #263238;
+$title-color: #7c8386;
+
+$task-background: #303c41;
+$task-status-background: #7c8386;
+$task-text-color: #ddd;
+
+$done-task-background: #28343a;
+$done-task-status-background: #3f494f;
+$done-task-text-color: #5c6569;
+
+
+/* Configuration: */
+$small-item-border-radius: 5px;
+$medium-item-border-radius: 5px;
+$large-item-border-radius: 5px;
+$animations-duration: 350ms;
+
+
+/* Task-list styles */
+.material-night {
+  background-color: $body-background;
+
+  .title {
+    font-family: 'Pacifico', 'Trebuchet MS', Arial, sans-serif;
+    color: $title-color;
+    cursor: default;
+  }
+
+  .tasks-container {
+    transition: height $animations-duration;
+  }
+
+  .task {
+    border-radius: $medium-item-border-radius;
+    overflow: hidden;
+    transition: top $animations-duration;
+  }
+
+  .task-text {
+    border: 0;
+    border-radius: $medium-item-border-radius;
+    background-color: $task-background;
+    color: #ddd;
+    transition: color $animations-duration, background-color $animations-duration;
+  }
+
+  .task.done .task-text {
+    background-color: $done-task-background;
+    color: $done-task-text-color;
+  }
+
+  .task-text::-webkit-input-placeholder {
+    color: $done-task-text-color;
+    opacity: 1;
+  }
+
+  .task::before {
+    background-color: $task-status-background;
+    transition: background-color $animations-duration;
+  }
+
+  .task.done::before {
+    background-color: $done-task-status-background;
+  }
+
+  .add-task-button {
+    border: 0;
+    border-radius: $medium-item-border-radius;
+    background-color: $task-background;
+    color: $task-text-color;
+  }
+
+  .task.done:hover .archive-task-button {
+    opacity: 0.5;
+  }
+  .archive-task-button {
+    transition: opacity 300ms;
+  }
+}

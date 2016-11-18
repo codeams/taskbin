@@ -1,0 +1,94 @@
+/**
+ * TaskList layout stylesheets
+ */
+
+
+.title {
+  margin: 30px 0 50px;
+  text-align: center;
+  font-size: 42px;
+}
+
+.tasks-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.task {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    z-index: 2;
+
+    .archive-task-button {
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 100%;
+    background-color: lightblue;
+  }
+
+  &.done::before {
+    background-color: lightseagreen;
+  }
+
+  .task-text {
+    display: inline-block;
+    width: 100%;
+    padding: 12px 40px 12px 70px;
+    border: 1px solid #222;
+  }
+
+  .task-status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+  }
+
+  .archive-task-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    //noinspection CssUnknownTarget
+    background-image: url('assets/images/icons/folder-gray.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0;
+    cursor: pointer;
+
+    &:hover {
+      //noinspection CssUnknownTarget
+      background-image: url('assets/images/icons/folder-yellow.svg');
+    }
+  }
+}
+
+.add-task-button {
+  display: block;
+  width: 280px;
+  margin: 0 auto 15px;
+  padding: 12px 0;
+  border: 1px solid #222;
+  text-align: center;
+  cursor: pointer;
+}
