@@ -1,0 +1,186 @@
+/*!
+ * Project: taskbin
+ * Author: Alejandro Montannez <codeams@gmail.com>
+ * Version: 0.1.0
+ * Build date: 2016-11-16
+ * License: Copyrighted
+ */
+/**
+ *
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+textarea {
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Open Sans', 'Trebuchet MS', Arial, sans-serif;
+  color: #777;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+  outline: 0;
+}
+
+/**
+ *
+ */
+body {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/**
+ * TaskList layout stylesheets
+ */
+.title {
+  margin: 30px 0 50px;
+  text-align: center;
+  font-size: 42px;
+}
+
+.tasks-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.task {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.task:last-of-type {
+  margin-bottom: 0;
+}
+.task:hover {
+  z-index: 2;
+}
+.task:hover .archive-task-button {
+  opacity: 1;
+}
+.task::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 100%;
+  background-color: lightblue;
+}
+.task.done::before {
+  background-color: lightseagreen;
+}
+.task .task-text {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 40px 12px 70px;
+  border: 1px solid #222;
+}
+.task .task-status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+}
+.task .archive-task-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  background-image: url("assets/images/icons/folder-gray.svg");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0;
+  cursor: pointer;
+}
+.task .archive-task-button:hover {
+  background-image: url("assets/images/icons/folder-yellow.svg");
+}
+
+.add-task-button {
+  display: block;
+  width: 280px;
+  margin: 0 auto 15px;
+  padding: 12px 0;
+  border: 1px solid #222;
+  text-align: center;
+  cursor: pointer;
+}
+
+/**
+ * TaskList material-night theme stylesheets
+ */
+/* Color palettes */
+/* Configuration: */
+/* Task-list styles */
+.material-night {
+  background-color: #263238;
+}
+.material-night .title {
+  font-family: 'Pacifico', 'Trebuchet MS', Arial, sans-serif;
+  color: #7c8386;
+  cursor: default;
+}
+.material-night .tasks-container {
+  transition: height 350ms;
+}
+.material-night .task {
+  border-radius: 5px;
+  overflow: hidden;
+  transition: top 350ms;
+}
+.material-night .task-text {
+  border: 0;
+  border-radius: 5px;
+  background-color: #303c41;
+  color: #ddd;
+  transition: color 350ms, background-color 350ms;
+}
+.material-night .task.done .task-text {
+  background-color: #28343a;
+  color: #5c6569;
+}
+.material-night .task-text::-webkit-input-placeholder {
+  color: #5c6569;
+  opacity: 1;
+}
+.material-night .task::before {
+  background-color: #7c8386;
+  transition: background-color 350ms;
+}
+.material-night .task.done::before {
+  background-color: #3f494f;
+}
+.material-night .add-task-button {
+  border: 0;
+  border-radius: 5px;
+  background-color: #303c41;
+  color: #ddd;
+}
+.material-night .task.done:hover .archive-task-button {
+  opacity: 0.5;
+}
+.material-night .archive-task-button {
+  transition: opacity 300ms;
+}
+
+/*# sourceMappingURL=main.css.map */
