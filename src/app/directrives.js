@@ -33,7 +33,7 @@
   'use strict';
 
   angular
-    .module('TaskListModule')
+    .module('BoardModule')
     .directive('extDownArrow', extDownArrow);
 
   function extDownArrow() {
@@ -56,7 +56,7 @@
  */
 (function() {
   angular
-    .module('TaskListModule')
+    .module('BoardModule')
     .directive('extUpArrow', extUpArrow);
 
   function extUpArrow() {

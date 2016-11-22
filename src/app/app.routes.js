@@ -12,16 +12,26 @@
 
   function routeConfiguration( $routeProvider ) {
     $routeProvider
-      .when('/task-list', {
-        templateUrl: 'templates/TaskList.template.html',
-        controller: 'TaskListController',
-        controllerAs: 'vm'
-      })
       .when('/login', {
         template: 'This is the login page (:'
       })
+      .when('/panel', {
+        templateUrl: 'templates/Panel.template.html',
+        controller: 'PanelController',
+        controllerAs: 'vm'
+      })
+      .when('/board', {
+        templateUrl: 'templates/Board.template.html',
+        controller: 'BoardController',
+        controllerAs: 'vm'
+      })
+      .when('/board/:id', {
+        templateUrl: 'templates/Board.template.html',
+        controller: 'BoardController',
+        controllerAs: 'vm'
+      })
       .otherwise({
-        redirectTo: '/task-list'
+        redirectTo: '/panel'
       });
   }
 })();

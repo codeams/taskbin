@@ -16,7 +16,7 @@
     var taskArchiveDatabaseReference = firebase.database().ref().child('archives');
 
     var TaskArchive = {
-      taskArchive: $firebaseArray( taskArchiveDatabaseReference ),
+      archive: $firebaseArray( taskArchiveDatabaseReference ),
       getTaskArchive: getTaskArchive,
       addTask: addTask,
       removeTask: removeTask
@@ -27,15 +27,15 @@
     ////////////////
 
     function getTaskArchive() {
-      return TaskArchive.taskArchive;
+      return TaskArchive.archive;
     }
 
     function addTask( task ) {
-      TaskArchive.taskArchive.$add( task );
+      TaskArchive.archive.$add( task );
     }
 
     function removeTask( task ) {
-      TaskArchive.taskArchive.$remove( task );
+      TaskArchive.archive.$remove( task );
     }
 
   }

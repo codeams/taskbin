@@ -1,20 +1,25 @@
 /**
- * TaskListController
+ * BoardController
  */
 (function() {
   'use strict';
 
   angular
-    .module('TaskListModule')
-    .controller('TaskListController', TaskListController);
+    .module('BoardModule')
+    .controller('BoardController', BoardController);
 
-  TaskListController.$inject = ['TaskList', 'TaskArchive'];
+  BoardController.$inject = ['TaskList', 'TaskArchive', '$routeParams', '$location'];
 
-  function TaskListController(TaskList, TaskArchive ) {
+  function BoardController( TaskList, TaskArchive, $routeParams, $location ) {
 
     var vm = this;
 
-    vm.taskList = TaskList.getList();
+    var boardId = $routeParams.id;
+
+    if ( boardId )
+      vm.taskList = TaskList.getList( boardId );
+    else
+      $location.path('/panel');
 
     vm.moveTaskUpwards = function( task ) {
       TaskList.moveTaskUpwards( task );

@@ -1,0 +1,7 @@
+<div class='boards-container'>
+  <a ng-repeat='board in vm.boards'
+     ng-click='vm.goToBoard( vm.boards.$keyAt( board ) )'
+     style='margin-right: 20px;'>
+    {{ board.name }}
+  </a>
+</div>

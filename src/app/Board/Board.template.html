@@ -1,0 +1,35 @@
+<div class='tasks-container'
+     ng-style="{height: (vm.taskList.length * 60) + 'px'}">
+
+  <div class='task'
+       ng-repeat='task in vm.taskList'
+       ng-class='task.done ? "done" : ""'
+       ng-style="{top: ((task.position - 1) * 60) + 'px'}">
+
+    <input type='text'
+           class='task-text'
+           placeholder='empty task :('
+           spellcheck='false'
+           autocomplete='off'
+           ng-model='task.text'
+           ext-down-arrow='vm.moveTaskDownwards(task)'
+           ext-up-arrow='vm.moveTaskUpwards(task)'
+           ng-change='vm.taskChange(task)'
+           value=''>
+
+    <input type='checkbox'
+           class='task-status'
+           title='is this task done?'
+           ng-model='task.done'
+           ng-change='vm.taskChange(task)'>
+
+    <div class='archive-task-button'
+         ng-dblclick='vm.archiveTask(task)'></div>
+  </div>
+
+</div>
+
+<div class='add-task-button'
+     ng-click='vm.addTask()'>
+  new task
+</div>

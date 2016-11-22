@@ -16,7 +16,18 @@
   'use strict';
 
   angular
-    .module('TaskListModule', ['firebase', 'TaskArchiveModule']);
+    .module('BoardModule', ['firebase', 'TaskArchiveModule']);
+})();
+
+
+/**
+ * BoardsModule
+ */
+(function() {
+  'use strict';
+
+  angular
+    .module('PanelModule', ['firebase']);
 })();
 
 
@@ -26,7 +37,9 @@
 (function() {
   angular
     .module('main', [
-      'TaskListModule',
-      'ngRoute'
+      'PanelModule',
+      'BoardModule',
+      'ngRoute',
+      'ngAnimate'
     ]);
 })();

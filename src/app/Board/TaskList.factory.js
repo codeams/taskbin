@@ -5,7 +5,7 @@
   'use strict';
 
   angular
-    .module('TaskListModule')
+    .module('BoardModule')
     .factory('TaskList', TaskList);
 
   TaskList.$inject = ['$firebaseArray'];
@@ -29,7 +29,8 @@
 
     ////////////////
 
-    function getList() {
+    function getList( boardId ) {
+      TaskList.list = $firebaseArray( firebase.database().ref().child('boards').child( boardId ).child('tasks') );
       return TaskList.list;
     }
 
